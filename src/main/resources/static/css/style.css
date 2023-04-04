@@ -1,0 +1,791 @@
+body, html {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#welcome-header {
+    text-align: center;
+}
+
+#login-form {
+    margin: 0 auto;
+    width: 130%;
+
+}
+
+header {
+    margin-bottom: 30px;
+    margin-top: 10px;
+
+}
+
+#add-car-form {
+    margin: 0 auto;
+    width: 35%;
+}
+
+li {
+    margin: 0 5px;
+}
+
+#background-image {
+    background-image: url('../images/img.png');
+    background-attachment: inherit;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+
+}
+
+
+ul.pagination {
+    flex-wrap: wrap;
+}
+
+.support-page-pagination {
+    width: 36%;
+    margin: 40px auto;
+}
+
+.row.support-ticket.header {
+    background-color: #E6E6E6;
+    font-weight: bold;
+    font-size: 21px;
+    padding: 8px;
+}
+
+.row.support-ticket {
+    padding: 10px;
+}
+
+.row.support-ticket > .solved {
+    background: linear-gradient(90deg, rgba(6, 157, 64, 1) 28%, rgba(130, 184, 148, 1) 98%);
+}
+
+.row.support-ticket > .unsolved {
+
+    background: linear-gradient(90deg, rgba(153, 25, 25, 1) 35%, rgba(204, 127, 127, 1) 100%);
+
+}
+
+.row.support-ticket p {
+    margin: 0;
+}
+
+
+.row.support-ticket button {
+    border: none;
+    background-color: white;
+}
+
+
+.row.support-ticket i.fas {
+    font-size: 20px;
+}
+
+.row.support-ticket i.fas.fa-check {
+    color: green;
+}
+
+.row.support-ticket i.fas.fa-arrow-circle-right {
+    color: rgb(79, 134, 195);
+
+}
+
+.row.support-ticket i.fas.fa-times {
+    color: red;
+}
+
+.status-buttons {
+    text-align: center;
+}
+
+#navigation {
+    justify-content: space-evenly;
+}
+
+#login-main {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    margin: 5% auto;
+}
+
+.description {
+    display: flex;
+    align-items: center;
+}
+
+.main-description {
+    background-color: #29394b;
+    color: white;
+    border-radius: 8px;
+    max-width: 50%;
+    margin: 60px 50px 0px 150px;
+    padding: 20px;
+}
+
+.form-group {
+    margin-top: 2px;
+}
+
+.diploma img {
+    vertical-align: bottom;
+    margin: 0;
+    margin-top: 50px;
+}
+
+.important {
+    color: #53606f;
+    margin-left: 150px;
+    margin-top: 25px;
+}
+
+main {
+    margin-top: 60px;
+}
+
+
+div.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 180px;
+}
+
+div.gallery:hover {
+    border: 1px solid #777;
+}
+
+div.gallery img {
+    width: 100%;
+    height: auto;
+}
+
+div.desc {
+    padding: 15px;
+    text-align: center;
+}
+
+.explore {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 100px;
+    text-align: center;
+    background-image: url(images/sign-up-prompt-background.jpg);
+    color: white;
+    padding: 50px;
+    border-radius: 8px;
+}
+
+.buttons button:nth-child(1) {
+    color: lightskyblue;
+    background-color: white;
+    outline-style: none;
+    border-radius: 8px;
+    width: 115px;
+    height: 35px;
+    border: transparent;
+    margin-right: 15px;
+}
+
+.buttons button:nth-child(3) {
+    color: white;
+    background-color: transparent;
+    outline-style: none;
+    border-radius: 8px;
+    width: 155px;
+    height: 35px;
+    border: 2px solid white;
+    margin-left: 15px;
+}
+
+span {
+    border-left: 3px solid white;
+}
+
+.underline {
+    border-bottom: 2px solid #29394b;
+    width: 87%;
+    margin: 0 auto;
+    display: block;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 90%;
+    margin: 0 auto;
+}
+
+.car {
+    padding: 50px;
+    border-style: solid;
+    margin: 0px 10px;
+    width: 300px !important;
+}
+
+i {
+    color: #29394b;
+}
+
+.main-block {
+    max-width: 340px;
+    min-height: 460px;
+    padding: 10px 0;
+    margin: auto;
+    border-radius: 5px;
+    border: solid 1px #ccc;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.31);
+    background: #ebebeb;
+}
+
+form {
+    margin: 0 30px;
+}
+
+.account-type,
+.gender {
+    margin: 15px 0;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+label#icon {
+    margin: 0;
+    border-radius: 5px 0 0 5px;
+}
+
+label.radio {
+    position: relative;
+    display: inline-block;
+    padding-top: 4px;
+    margin-right: 20px;
+    text-indent: 30px;
+    overflow: visible;
+    cursor: pointer;
+}
+
+label.radio:before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1c87c9;
+}
+
+label.radio:after {
+    content: "";
+    position: absolute;
+    width: 9px;
+    height: 4px;
+    top: 8px;
+    left: 4px;
+    border: 3px solid #fff;
+    border-top: none;
+    border-right: none;
+    transform: rotate(-45deg);
+    opacity: 0;
+}
+
+input[type="radio"]:checked + label:after {
+    opacity: 1;
+}
+
+/*input[type="text"],*/
+/*input[type="password"] {*/
+/*    width: calc(100% - 57px);*/
+/*    height: 36px;*/
+/*    margin: 13px 0 0 -5px;*/
+/*    padding-left: 10px;*/
+/*    border-radius: 0 5px 5px 0;*/
+/*    border: solid 1px #cbc9c9;*/
+/*    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.09);*/
+/*    background: #fff;*/
+/*}*/
+input[type="password"] {
+    margin-bottom: 15px;
+}
+
+#icon {
+    display: inline-block;
+    padding: 9.3px 15px;
+    box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.09);
+    background: #1c87c9;
+    color: #fff;
+    text-align: center;
+}
+
+.btn-block {
+    margin-top: 10px;
+    text-align: center;
+}
+
+button {
+    width: 100%;
+    padding: 10px 0;
+    margin: 10px auto;
+    border-radius: 5px;
+    border: none;
+    background: #1c87c9;
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+button:hover {
+    background: #26a9e0;
+}
+
+#table {
+
+}
+
+#reasons {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#reasons td, #reasons th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#table {
+    width: 60%;
+    margin: 0 auto;
+}
+
+#reasons tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#reasons tr:hover {
+    background-color: #ddd;
+}
+
+#reasons th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #26a9e0;
+    color: white;
+}
+
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.gray-bg {
+    background-color: #ebf4fa;
+}
+
+/* Blog
+---------------------*/
+.blog-grid {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.blog-grid .blog-img {
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.blog-grid .blog-img .date {
+    position: absolute;
+    background: #3a3973;
+    color: #ffffff;
+    padding: 8px 15px;
+    left: 0;
+    top: 10px;
+    font-size: 14px;
+}
+
+.blog-grid .blog-info {
+    box-shadow: 0 0 30px rgba(31, 45, 61, 0.125);
+    border-radius: 5px;
+    background: #ffffff;
+    padding: 20px;
+    margin: -30px 20px 0;
+    position: relative;
+}
+
+.blog-grid .blog-info h5 {
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0 0 10px;
+}
+
+.blog-grid .blog-info h5 a {
+    color: #3a3973;
+}
+
+.blog-grid .blog-info p {
+    margin: 0;
+}
+
+.blog-grid .blog-info .btn-bar {
+    margin-top: 20px;
+}
+
+.px-btn-arrow {
+    padding: 0 50px 0 0;
+    line-height: 20px;
+    position: relative;
+    display: inline-block;
+    color: #fe4f6c;
+    -moz-transition: ease all 0.3s;
+    -o-transition: ease all 0.3s;
+    -webkit-transition: ease all 0.3s;
+    transition: ease all 0.3s;
+}
+
+
+.px-btn-arrow .arrow {
+    width: 13px;
+    height: 2px;
+    background: currentColor;
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    right: 25px;
+    -moz-transition: ease right 0.3s;
+    -o-transition: ease right 0.3s;
+    -webkit-transition: ease right 0.3s;
+    transition: ease right 0.3s;
+}
+
+.px-btn-arrow .arrow:after {
+    width: 8px;
+    height: 8px;
+    border-right: 2px solid currentColor;
+    border-top: 2px solid currentColor;
+    content: "";
+    position: absolute;
+    top: -3px;
+    right: 0;
+    display: inline-block;
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.footer-basic {
+    padding: 40px 0;
+    background-color: #ffffff;
+    color: #4b4c4d;
+}
+
+.footer-basic ul {
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.footer-basic li {
+    padding: 0 10px;
+}
+
+.footer-basic ul a {
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.footer-basic ul a:hover {
+    opacity: 1;
+}
+
+.footer-basic .copyright {
+    margin-top: 15px;
+    text-align: center;
+    font-size: 13px;
+    color: #aaa;
+    margin-bottom: 0;
+}
+
+/*form styles*/
+#msform {
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+}
+
+#msform fieldset {
+    background: white;
+    border: 0 none;
+    border-radius: 0px;
+    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+
+    /*stacking fieldsets above each other*/
+    position: relative;
+}
+
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+    display: none;
+}
+
+/*inputs*/
+#msform input, #msform textarea {
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    font-family: montserrat;
+    color: #2C3E50;
+    font-size: 13px;
+}
+
+#msform input:focus, #msform textarea:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #f05f40;
+    outline-width: 0;
+    transition: All 0.5s ease-in;
+    -webkit-transition: All 0.5s ease-in;
+    -moz-transition: All 0.5s ease-in;
+    -o-transition: All 0.5s ease-in;
+}
+
+/*buttons*/
+#msform .action-button {
+    width: 100px;
+    background: #f05f40;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button:hover, #msform .action-button:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #f05f40;
+}
+
+#msform .action-button-previous {
+    width: 100px;
+    background: #C5C5F1;
+    font-weight: bold;
+    color: white;
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 10px 5px;
+    margin: 10px 5px;
+}
+
+#msform .action-button-previous:hover, #msform .action-button-previous:focus {
+    box-shadow: 0 0 0 2px white, 0 0 0 3px #C5C5F1;
+}
+
+/*headings*/
+.fs-title {
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #2C3E50;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.fs-subtitle {
+    font-weight: normal;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/*progressbar*/
+#progressbar {
+
+    overflow: hidden;
+    /*CSS counters to number the steps*/
+    counter-reset: step;
+    width: 60%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+#progressbar li {
+    list-style-type: none;
+    color: white;
+    text-transform: uppercase;
+    font-size: 9px;
+    width: 20%;
+    float: left;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+#progressbar li:before {
+    content: counter(step);
+    counter-increment: step;
+    width: 24px;
+    height: 24px;
+    line-height: 26px;
+    display: block;
+    font-size: 12px;
+    color: #333;
+    background: white;
+    border-radius: 25px;
+    margin: 0 auto 10px auto;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: -50%;
+    top: 9px;
+    z-index: -1; /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+    /*connector not needed before the first step*/
+    content: none;
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before, #progressbar li.active:after {
+    background: #f05f40;
+    color: white;
+}
+
+
+/* Not relevant to this form */
+.dme_link {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.dme_link a {
+    background: #FFF;
+    font-weight: bold;
+
+    border: 0 none;
+    border-radius: 25px;
+    cursor: pointer;
+    padding: 5px 25px;
+    font-size: 12px;
+}
+
+.dme_link a:hover, .dme_link a:focus {
+    background: #C5C5F1;
+    text-decoration: none;
+}
+
+
+/*
+new
+*/
+#welcome-div {
+    background-color: wheat;
+    border-radius: 30px;
+    padding: 30px;
+    color: cadetblue;
+}
+
+.custom-nav {
+    color: cadetblue !important;
+}
+
+.color{
+    color: cadetblue !important;
+}
+
+#add-subsc {
+    display: flex;
+    justify-content: space-around;
+    width: 60%;
+    margin: 5% auto;
+    flex-direction: row-reverse;
+}
+#search-form{
+    margin: 0 auto;
+    width: 50%
+}
+
+invoice {
+    padding: 30px;
+}
+
+.invoice h2 {
+    margin-top: 0px;
+    line-height: 0.8em;
+}
+
+.invoice .small {
+    font-weight: 300;
+}
+
+.invoice hr {
+    margin-top: 10px;
+    border-color: #ddd;
+}
+
+.invoice .table tr.line {
+    border-bottom: 1px solid #ccc;
+}
+
+.invoice .table td {
+    border: none;
+}
+
+.invoice .identity {
+    margin-top: 10px;
+    font-size: 1.1em;
+    font-weight: 300;
+}
+
+.invoice .identity strong {
+    font-weight: 600;
+}
+
+
+.grid {
+    position: relative;
+    width: 100%;
+    background: #fff;
+    color: #666666;
+    border-radius: 2px;
+    margin-bottom: 25px;
+    box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.1);
+}

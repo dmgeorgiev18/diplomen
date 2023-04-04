@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="~{./fragments/head.html}">
+
+</head>
+<body>
+<th:block th:insert="~{./fragments/header.html}">
+
+</th:block>
+
+<main>
+    <div class="container">
+        <div class="row">
+            <!-- BEGIN INVOICE -->
+            <div class="col-xs-12">
+                <div class="grid invoice">
+                    <div class="grid-body" style="text-align: center" th:object="${sub}">
+                        <div class="invoice-title">
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <img src="http://vergo-kertas.herokuapp.com/assets/img/logo.png" alt="" height="35">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row">
+                                <div class="col-xs-12">
+                                    <h2>Номер на абонамент<br>
+                                        <span class="small" style="font-size: 20px" th:text="*{id}"></span></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <address>
+                                    <strong>Имена:</strong>
+                                    <br>
+                                    <th:block th:text="${sub.firstName} + ' ' + ${sub.lastName}"></th:block>
+                                    <br>
+
+                                    <abbr title="Phone">Телефон:</abbr>
+                                    <th:block th:text="*{phoneNumber}"></th:block>
+
+                                </address>
+                            </div>
+                            <div class="col-xs-6 text-right">
+                                <address>
+                                    <strong>Информация за мотора:</strong><br>
+                                    <th:block th:text="'Номер на мотор: ' + ${sub.motorId} "></th:block><br>
+                                    <th:block th:text="'Производител: ' + ${sub.model.manufacturer} "></th:block><br>
+                                    <th:block th:text="'Модел: ' + ${sub.model.model} "></th:block><br>
+                                    <th:block th:text="'Година: ' + ${sub.year} "></th:block><br>
+                                    P. Sherman 42,
+                                    <br>
+                                    Wallaby Way, Sidney
+                                    <br>
+                                    <abbr title="Phone">Телефон:</abbr> (123) 345-6789
+                                </address>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-6">
+                                <address>
+                                    <strong>Тип на абонамент</strong><br>
+                                    <th:block th:text="${sub.subscriptionType.toString()} "></th:block><br>
+                                </address>
+                            </div>
+
+                            <div class="col-xs-6 text-right">
+                                <address>
+                                    <strong>Дата на старт:</strong><br>
+                                    <th:block th:text="*{startDate}"></th:block>
+                                    <br>
+                                    <strong>Дата на край:</strong><br>
+                                    <th:block th:text="*{finishDate}"></th:block>
+
+                                </address>
+                            </div>
+                            <div class="col-xs-6">
+                                <address>
+                                    <strong>Добавен от</strong><br>
+                                    <th:block th:text="${sub.addedBy.username} "></th:block><br>
+                                </address>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- END INVOICE -->
+        </div>
+    </div>
+</main>
+
+<th:block th:insert="~{./fragments/footer.html}">
+
+</th:block>
+<!-- Footer -->
+</body>
+</html>

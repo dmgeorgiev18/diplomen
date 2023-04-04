@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="~{./fragments/head.html}">
+
+</head>
+<body>
+<th:block th:insert="~{./fragments/header.html}">
+
+</th:block>
+
+<main>
+    <section id="searchSection">
+        <form id="search-form" th:action="@{/subscriptions}" method="get">
+            <div
+                    class="form-group"
+                    style="
+                  justify-content: space-evenly;
+                  align-items: baseline;
+                  width: 50%;
+                  margin: 0 auto;
+                "
+            >
+                <div class="form-outline">
+                    <input
+                            th:name="firstName"
+                            th:value="${firstName}"
+                            placeholder="First name"
+                            type="search"
+                            id="firstName"
+                            class="form-control"
+                    />
+                </div>
+                <div class="form-group">
+                    <input
+
+                            th:value="${lastName}"
+                            placeholder="Last name"
+                            th:name="lastName"
+                            type="search"
+                            id="lastName"
+                            class="form-control"
+                    />
+                </div>
+                <div class="form-group">
+                    <input
+
+                            th:value="${motorId}"
+                            placeholder="MotorId"
+                            th:name="motorId"
+                            type="search"
+                            id="motorId"
+                            class="form-control"
+                    />
+                </div>
+                <div class="form-group">
+                    <input
+
+                            th:value="${phoneNumber}"
+                            placeholder="Phone Number"
+                            th:name="phoneNumber"
+                            type="search"
+                            id="phoneNumber"
+                            class="form-control"
+                    />
+                </div>
+                <div class="form-control">
+                    <select th:name="sortType "  class="form-select" aria-label="Default select example"
+                            id="subType">
+                        <option th:each="order:${orders}" th:value="${order}"
+                                th:text="${order}"></option>
+                    </select>
+                </div>
+                <button type="submit" class="form-control btn btn-primary">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+    </section>
+    <section class="table">
+        <h1 style="text-align: center">Абонаменти</h1>
+        <h1 th:if="${#lists.isEmpty(subscriptions)}" style="text-align: center">
+            Няма абонамементи в системата
+        </h1>
+        <table th:unless="${#lists.isEmpty(subscriptions)}" class="table table-bordered
+        table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Рег. номер на мотор</th>
+                <th scope="col">Модел</th>
+                <th scope="col">Производител</th>
+                <th scope="col">Година</th>
+                <th scope="col">Първо име на клиент</th>
+                <th scope="col">Последно име на клиент</th>
+                <th scope="col">Телефонен номер</th>
+                <th scope="col">Тип на абонамент</th>
+                <th scope="col">Начална дата:</th>
+                <th scope="col">Крайна дата</th>
+                <th scope="col">Добавен от:</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+
+            <tbody th:each="sub : ${subscriptions}">
+            <tr>
+                <td th:text="${sub.motorId}"></td>
+                <td th:text="${sub.model.model}"></td>
+                <td th:text="${sub.model.manufacturer}"></td>
+                <td th:text="${sub.year}"></td>
+                <td th:text="${sub.firstName}"></td>
+                <td th:text="${sub.lastName}"></td>
+                <td th:text="${sub.phoneNumber}"></td>
+                <td th:text="${sub.subscriptionType.days} + ' дни'"></td>
+                <td th:text="${sub.startDate}"></td>
+                <td th:text="${sub.finishDate}"></td>
+                <td th:text="${sub.addedBy.username}">
+                <td>
+                    <a 
+                       th:href="@{/subscriptions/{id}(id=${sub.id})}" class="btn btn-light">Виж</a>
+                </td>
+                <td>
+
+                <a sec:authorize="hasAuthority('ADMIN')"
+                   th:href="@{/subscriptions/edit/{id}(id=${sub.id})}"
+                   class="btn btn-warning"
+                >Промени</a>
+                </td>
+                <td>
+                    <a sec:authorize="hasAuthority('ADMIN')"
+                       th:href="@{/subscriptions/delete/{id}(id=${sub.id})}" class="btn btn-danger">Изтрии</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </section>
+</main>
+
+<th:block th:insert="~{./fragments/footer.html}">
+
+</th:block>
+<!-- Footer -->
+</body>
+</html>

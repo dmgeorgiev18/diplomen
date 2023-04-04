@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="~{./fragments/head.html}">
+
+</head>
+<body>
+<th:block th:insert="./fragments/header.html">
+
+</th:block>
+
+<main id="add-subsc vh-50">
+    <h1 style="margin-bottom: 80px   ;text-align: center; color: cadetblue">Добави абонамент</h1>
+    <div style="margin: 0 auto; width: 50%" th:if="${success}" class=" alert alert-success" role="alert">
+        <h4 class="alert-heading">Потребителя е създаден успешно!</h4>
+        <button style="margin:0 auto; width: 20%;display: inherit;background-color: #f05f40" type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">Затвори</span>
+        </button>
+    </div>
+    <div style="padding-top: 5px !important; padding-bottom: 2px !important; " class="container py-5 h-50">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <form th:object="${user}" th:action="@{/admin/users/addUser}" th:method="post">
+                    <div class="form-group">
+                        <label for="username">Потребителско име</label>
+                        <input th:field="*{username}" type="text" class="form-control" id="username">
+                        <small
+                                th:if="${#fields.hasErrors('username')}"
+                                th:errors="*{username}"
+                                class="form-text text-danger"
+                        ></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Парола</label>
+                        <input th:field="*{password}" type="text" class="form-control" id="password">
+                        <small
+                                th:if="${#fields.hasErrors('password')}"
+                                th:errors="*{password}"
+                                class="form-text text-danger"
+                        ></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subType">Права</label>
+                        <select th:field="*{role}" class="form-select" aria-label="Default select example"
+                                id="subType">
+                            <option th:each="role:${roles}" th:value="${role.name}"
+                                    th:text="${role.name}"></option>
+                        </select>
+
+                    </div>
+                    <div th:if="${#fields.hasErrors('global')}">
+
+                        <p th:each="err : ${#fields.errors('global')}" th:text="${err}" class="form-text text-danger "></p>
+                    </div>
+                    <input style="margin-top: 10px;" type="submit" class="btn btn-primary"></input>
+                </form>
+            </div>
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img th:src="@{/images/add-sub.jpg}"
+                     class="img-fluid" alt="Phone image">
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<th:block th:insert="./fragments/footer.html">
+
+</th:block>
+<!-- Footer -->
+</body>
+</html>

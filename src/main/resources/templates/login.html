@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="~{./fragments/head.html}">
+
+</head>
+<body>
+<th:block th:insert="./fragments/header.html">
+
+</th:block>
+
+<main id="login-main">
+
+
+
+    <section style="padding: 0 0" class="vh-50">
+        <h1 style="margin-bottom: 80px   ;text-align: center; color: cadetblue">Влез в системата</h1>
+        <div style="padding-top: 5px !important; padding-bottom: 2px !important; " class="container py-5 h-50">
+            <div class="row d-flex align-items-center justify-content-center h-100">
+                <div class="col-md-8 col-lg-7 col-xl-6">
+                    <img th:src="@{images/bike-2.png}"
+                         class="img-fluid" alt="Phone image">
+                </div>
+                <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                    <form th:action="@{/login}" th:method = "post">
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <input type="text" name="username" id="form2Example1" class="form-control" />
+                            <label class="form-label" for="form2Example1">Потребителско име</label>
+                        </div>
+
+                        <!-- Password input -->
+                        <div class="form-outline mb-4">
+                            <input name="password" type="password" id="form2Example2" class="form-control" />
+                            <label class="form-label" for="form2Example2">Парола</label>
+                        </div>
+                        <p th:if="${loginError}" class="alert alert-danger">Грешно потребителско име или парола.</p>
+
+                        <!-- 2 column grid layout for inline styling -->
+                        <div class="row mb-4">
+                            <div class="col d-flex justify-content-center">
+                                <!-- Checkbox -->
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="form2Example31" checked />
+                                    <label class="form-check-label" for="form2Example31"> Запомни ме </label>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <input type="submit" class="btn btn-primary btn-block mb-4">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<!-- Footer -->
+<th:block th:insert="./fragments/footer.html">
+
+</th:block>
+<!-- Footer -->
+</body>
+</html>

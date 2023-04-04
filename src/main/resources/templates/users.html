@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="~{./fragments/head.html}">
+
+</head>
+<body>
+<th:block th:insert="~{./fragments/header.html}">
+
+</th:block>
+
+<main>
+    <section class="table">
+        <h1 style="text-align: center">Потребители</h1>
+        <table th:unless="${#lists.isEmpty(users)}" class="table table table-bordered
+        table-striped ">
+            <thead>
+            <tr>
+                <th scope="col">Име</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+            </thead>
+
+            <tbody th:each="user : ${users}">
+            <tr>
+                <td th:text="${user.username}"></td>
+                <td>
+                    <a sec:authorize="hasAuthority('ADMIN')"
+                       th:href="@{/admin/users/edit/{id}(id=${user.id})}"
+                       class="btn btn-warning"
+                    >Промени</a>
+                </td>
+                <td>
+                    <a sec:authorize="hasAuthority('ADMIN')"
+                       th:href="@{/admin/users/delete/{id}(id=${user.id})}" class="btn btn-danger">Изтрии</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+
+    </section>
+</main>
+
+<th:block th:insert="~{./fragments/footer.html}">
+
+</th:block>
+<!-- Footer -->
+</body>
+</html>

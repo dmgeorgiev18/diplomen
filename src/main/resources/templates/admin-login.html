@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="~{./fragments/head.html}">
+
+</head>
+<body>
+<th:block th:insert="~{./fragments/header.html}" >
+
+</th:block>
+<main>
+  <div style="margin: 0 auto; width: 50%">
+    <h1 style="text-align: center;">Вход</h1>
+    <form th:action="@{/admin-login}" th:method="post" id="login-form">
+      <!-- Email input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example1">Потребителско име</label>
+        <input type="text" id="form2Example1" name="username" class="form-control" />
+      </div>
+
+      <!-- Password input -->
+      <div class="form-outline mb-4">
+        <label class="form-label" for="form2Example2">Парола</label>
+        <input name="password" type="password" id="form2Example2" class="form-control" />
+      </div>
+
+      <!-- 2 column grid layout for inline styling -->
+      <div class="row mb-4">
+        <div class="col d-flex justify-content-center">
+          <!-- Checkbox -->
+        </div>
+
+
+        <p th:if="${loginError}" class="alert alert-danger">Грешно потребителско име/парола или потребителя не е одобрен.</p>
+      </div>
+
+      <!-- Submit button -->
+      <input class="btn btn-primary btn-block mb-4" type="submit" value="Изпрати" >
+    </form>
+  </div>
+</main>
+<th:block  th:insert="~{./fragments/footer.html}" >
+
+</th:block>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head th:insert="~{./fragments/head.html}">
+
+</head>
+<body>
+<th:block th:insert="./fragments/header.html">
+
+</th:block>
+
+<main id="add-subsc vh-50">
+    <h1 style="margin-bottom: 80px   ;text-align: center; color: cadetblue">Добави абонамент</h1>
+    <div style="padding-top: 5px !important; padding-bottom: 2px !important; " class="container py-5 h-50">
+        <div class="row d-flex align-items-center justify-content-center h-100">
+
+            <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+                <form th:object="${subscription}" th:action="@{/subscriptions/create}" th:method="post">
+                    <div class="form-group">
+                        <label for="firstName">Първо име</label>
+                        <input th:field="*{firstName}" type="text" class="form-control" id="firstName">
+                        <small
+                                th:if="${#fields.hasErrors('firstName')}"
+                                th:errors="*{firstName}"
+                                class="form-text text-danger"
+                        ></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Фамилно име</label>
+                        <input th:field="*{lastName}" type="text" class="form-control" id="lastName">
+                        <small
+                                th:if="${#fields.hasErrors('lastName')}"
+                                th:errors="*{lastName}"
+                                class="form-text text-danger"
+                        ></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Телефонен номер</label>
+                        <input th:field="*{phonenumber}" type="text" class="form-control" id="phoneNumber">
+                        <small
+                                th:if="${#fields.hasErrors('phonenumber')}"
+                                th:errors="*{phonenumber}"
+                                class="form-text text-danger"
+                        ></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="motorId">Регистрационен номер на мотора</label>
+                        <input th:field="*{motorId}" type="text" class="form-control" id="motorId">
+                        <small
+                                th:if="${#fields.hasErrors('motorId')}"
+                                th:errors="*{motorId}"
+                                class="form-text text-danger"
+                        ></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Модел на мотора</label>
+                        <select th:field="*{modelId}" class="form-select" aria-label="Default select example"
+                                id="model">
+                            <option th:each="model:${models}" th:value="${model.id}"
+                                    th:text="${model.toString()}"></option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Година на мотора</label>
+                        <input th:field="*{year}" type="number" class="form-control" id="year">
+                        <small
+                                th:if="${#fields.hasErrors('year')}"
+                                th:errors="*{year}"
+                                class="form-text text-danger"
+                        ></small>
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate">Дата на стартиране на абонамента</label>
+                        <input th:field="*{startDate}" type="date" class="form-control" id="startDate">
+                        <small
+                                th:if="${#fields.hasErrors('startDate')}"
+                                th:errors="*{startDate}"
+                                class="form-text text-danger"
+                        ></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subType">Тип на абонамент</label>
+                        <select th:field="*{subscriptionTypeId}" class="form-select" aria-label="Default select example"
+                                id="subType">
+                            <option th:each="subType:${subTypes}" th:value="${subType.id}"
+                                    th:text="${subType.toString()}"></option>
+                        </select>
+
+                    </div>
+
+                    <input style="margin-top: 10px;" type="submit" class="btn btn-primary"></input>
+                </form>
+            </div>
+            <div class="col-md-8 col-lg-7 col-xl-6">
+                <img th:src="@{/images/add-sub.jpg}"
+                     class="img-fluid" alt="Phone image">
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Footer -->
+<th:block th:insert="./fragments/footer.html">
+
+</th:block>
+<!-- Footer -->
+</body>
+</html>
