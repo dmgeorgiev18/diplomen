@@ -8,7 +8,7 @@ import lombok.Setter;
 import java.time.LocalDate;
 
 
-@Table
+@Table(name = "Subscriptions")
 @Entity
 @Getter
 @Setter
